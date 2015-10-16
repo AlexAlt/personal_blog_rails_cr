@@ -7,8 +7,21 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <%= flash[:alert] %>
+  <%= flash[:notice] %>
+  <div class="jumbotron brand-header">
+    <h1>Cats Who Code</h1>
+  </div>
 
-<%= yield %>
+  <div class='navbar navbar-default'>
+    <%= yield(:navbar) %>
+    <a class="navbar-brand" href="/posts">Home</a>
+  </div>
+
+  <div class="container-fluid">
+
+  <%= yield %>
+  </div>
 
 </body>
 </html>

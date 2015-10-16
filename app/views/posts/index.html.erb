@@ -1,0 +1,17 @@
+<% content_for(:navbar) do %>
+  <div class="nav navbar-nav navbar-right container-fluid">
+    <%= link_to "Write New Post", new_post_path %>
+  </div>
+<% end %>
+
+<% if @posts.any? %>
+  <h2>Recent Posts</h2>
+  <% @posts.each do |post| %>
+    <h4><%= post.title %> 
+      <br>
+      <small>By: <%= post.user_name %> at <%= post.created_at %></small> 
+    </h4>
+    <% end %>
+<% else %>
+  <h3> Nothing to show. Come back soon!</h3>
+<% end %>
