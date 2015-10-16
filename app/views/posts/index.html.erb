@@ -7,7 +7,7 @@
 <% if @posts.any? %>
   <h2>Recent Posts</h2>
   <% @posts.each do |post| %>
-    <h4><%= post.title %> 
+    <h4><%= link_to post.title, post_path(post) %> 
       <br>
       <small>By: <%= post.user_name %> at <%= post.created_at %></small> 
     </h4>
@@ -15,3 +15,4 @@
 <% else %>
   <h3> Nothing to show. Come back soon!</h3>
 <% end %>
+
