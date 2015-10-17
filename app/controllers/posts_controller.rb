@@ -9,6 +9,7 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+     2.times { @post.tags.build}
   end
 
   def create
@@ -43,7 +44,7 @@ class PostsController < ApplicationController
 
   private
   def post_params
-     params.require(:post).permit(:user_name, :title, :content)
+     params.require(:post).permit(:user_name, :title, :content, tags_attributes: [:id, :name])
   end
 
 end

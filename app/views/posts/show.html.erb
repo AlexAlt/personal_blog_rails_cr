@@ -4,6 +4,16 @@
 
   <%= @post.content %>
   <hr>
+  <% if @post.tags.any? %>
+    <div class="pull-right">
+      Tagged as:
+      <% @post.tags.each do |tag| %>
+        <%= tag.name %>
+      <% end %>
+    </div>
+  <% end%>
+  <br>
+
   <button class="btn"><%= link_to "Edit", edit_post_path %></button>
    <button class="btn btn-link"><%= link_to "Delete Post", post_path(@post), :data => {:confirm => "You sure?",
     :method => 'delete'} %></button>
