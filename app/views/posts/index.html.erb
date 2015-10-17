@@ -6,7 +6,7 @@
 
 <% if @posts.any? %>
   <h2>Recent Posts</h2>
-  <% @posts.each do |post| %>
+  <% @posts.take(3).each do |post| %>
     <h4><%= link_to post.title, post_path(post) %> 
       <br>
       <small>By: <%= post.user_name %> on <%= post.created_at.strftime("%m/%d/%Y at %I:%M%P")  %></small> 
