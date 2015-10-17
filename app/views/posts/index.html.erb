@@ -9,7 +9,7 @@
   <% @posts.each do |post| %>
     <h4><%= link_to post.title, post_path(post) %> 
       <br>
-      <small>By: <%= post.user_name %> at <%= post.created_at %></small> 
+      <small>By: <%= post.user_name %> on <%= post.created_at.strftime("%m/%d/%Y at %I:%M%P")  %></small> 
     </h4>
     <% end %>
 <% else %>

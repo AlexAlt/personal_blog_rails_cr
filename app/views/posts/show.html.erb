@@ -1,6 +1,6 @@
 <div class="post-container panel panel-default">
   <h2><%= @post.title %></h2>
-  <h4><%= @post.user_name %> <small><%= @post.created_at.strftime("%b %d %Y %l %M %P") %></small></h4>
+  <h4><%= @post.user_name %> <small><%= @post.created_at.strftime("%m/%d/%Y %I:%M%P") %></small></h4>
 
   <%= @post.content %>
   <hr>
