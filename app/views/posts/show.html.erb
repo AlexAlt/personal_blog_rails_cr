@@ -1,6 +1,6 @@
 <div class="post-container panel panel-default">
   <h2><%= @post.title %></h2>
-  <h4><%= @post.user_name %> <small><%= @post.created_at %></small></h4>
+  <h4><%= @post.user_name %> <small><%= @post.created_at.strftime("%b %d %Y %l %M %P") %></small></h4>
 
   <%= @post.content %>
   <hr>
@@ -8,7 +8,7 @@
     <div class="pull-right">
       Tagged as:
       <% @post.tags.each do |tag| %>
-        <%= tag.name %>
+        <%= link_to tag.name, tag_path(tag) %>
       <% end %>
     </div>
   <% end%>

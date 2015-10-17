@@ -1,0 +1,8 @@
+<h3> Posts tagged as: <%= @tag.name %> </h3>
+  <% if @tag.posts.any? %>
+    <% @tag.posts.each do |post| %>
+      <%= link_to post.title, post_path(post)%>
+      <% end%>
+  <% else %>
+    <p>No posts with this tag.</p>
+  <% end%>

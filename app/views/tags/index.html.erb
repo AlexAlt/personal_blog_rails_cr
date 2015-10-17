@@ -1,0 +1,4 @@
+<h2>Search posts by tag:</h2>
+<% @tags.each do |tag| %>
+  <%= link_to tag.name, tag_path(tag) %>
+<% end %>
