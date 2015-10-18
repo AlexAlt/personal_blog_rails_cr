@@ -1,18 +1,7 @@
-<% content_for(:navbar) do %>
-  <div class="nav navbar-nav navbar-right container-fluid">
-    <%= link_to "Write New Post", new_post_path %>
-  </div>
-<% end %>
+<h2>All Posts </h2>
 
-<% if @posts.any? %>
-  <h2>Recent Posts</h2>
-  <% @posts.take(3).each do |post| %>
-    <h4><%= link_to post.title, post_path(post) %> 
-      <br>
-      <small>By: <%= post.user_name %> on <%= post.created_at.strftime("%m/%d/%Y at %I:%M%P")  %></small> 
-    </h4>
-    <% end %>
-<% else %>
-  <h3> Nothing to show. Come back soon!</h3>
+<% @posts.each do |post| %>
+  <h5><%= link_to post.title, post_path(post) %> 
+    <small>By: <%= post.user_name %> on <%= post.created_at.strftime("%m/%d/%Y at %I:%M%P")  %></small> 
+  </h5>
 <% end %>
-
