@@ -1,19 +1,17 @@
-<% content_for(:navbar) do %>
-  <div class="nav navbar-nav navbar-right container-fluid">
-    <%= link_to "Write New Post", new_post_path %>
-  </div>
-<% end %>
 
-<% if @posts.any? %>
-  <h2>Recent Posts</h2>
-  <% @posts.take(3).each do |post| %>
-    <h4><%= link_to post.title, post_path(post) %> 
-      <br>
-      <small>By: <%= post.user_name %> on <%= post.created_at.strftime("%m/%d/%Y at %I:%M%P")  %></small> 
-    </h4>
-    <% end %>
-    <%= link_to "Archive", posts_path %>
-<% else %>
-  <h3> Nothing to show. Come back soon!</h3>
-<% end %>
+<div class="home-blog clearfix">
+  <% if @posts.any? %>
+    <h3>Recent Blog Posts</h3>
+    <% @posts.take(3).each do |post| %>
+      <h4><%= link_to post.title, post_path(post) %> 
+        <br>
+        <small>By: <%= post.user_name %> on <%= post.created_at.strftime("%m/%d/%Y at %I:%M%P")  %></small> 
+      </h4>
+      <% end %>
+      <%= link_to "Archive", posts_path %><br>
+      <%= link_to "Write New Post", new_post_path %>
+  <% else %>
+    <h3> Nothing to show. Come back soon!</h3>
+  <% end %>
+</div>
 
