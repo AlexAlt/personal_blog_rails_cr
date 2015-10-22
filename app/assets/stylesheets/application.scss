@@ -1,6 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+
 .brand-header {
   margin-bottom: 0px;
   text-align: center;
@@ -10,42 +11,59 @@
   margin-top: 0px;
 }
 
-.post-container {
-  float: right;
-  text-align: center;
-  width: 60%;
-  padding-bottom: 20px;
-}
-
-.home-blog {
-  background-color: #eee;
-  padding: 7px;
-  margin: 0 auto;
-  width: 60%;
+.image-nav{
+  border-radius: 50%;
+  height: 80px;
+  width: 80px;
 }
 
 .contents-nav {
   text-align: center;
   float: left;
   width: 25%;
+  margin-top: 40px;
 }
+
+.post-container {
+  float: right;
+  text-align: center;
+  width: 60%;
+  margin-top: 40px;
+  padding-bottom: 20px;
+}
+
+.home-blog {
+  text-align: center;
+  float: right;
+  margin: 0 auto;
+  width: 60%;
+}
+
+.home-blog-wrapper {
+  float: right;
+  margin: 0 auto;
+  margin-top: 40px;
+  width: 60%;
+}
+
 
 .clearfix {
   overflow: auto;
 }
 
+
 .about-container {
   background-image: url('moi.jpg');
-  background-size: 100%;
-  height: 490px;
-  width: 70%;
-  float: left;
-
+  height: 625px;
+  width: 720px;
+  float: right;
+  margin-top: 40px;
+  border-radius: 50%;
 }
 
 .about-text {
-  text-align: center;
-  margin-top: 20px;
   color: white;
-  text-shadow: 1px 1px black;
+  margin-top: 85px;
+  text-align: center;
+  text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
 }
