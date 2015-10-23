@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root 'layouts#index'
+  devise_for :admins
+  root 'home#index'
 
   resources 'posts' do 
   end
