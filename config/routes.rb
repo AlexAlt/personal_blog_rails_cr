@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :admins
+  devise_for :users
+
   root 'home#index'
 
   resources 'posts' do 
@@ -8,6 +9,6 @@ Rails.application.routes.draw do
   resources 'tags' do
   end
 
-  resources 'about' do
-  end
+  resources :about, :only => [:index]
+  resources :admin, :only => [:index]
 end

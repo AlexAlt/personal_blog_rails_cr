@@ -1,5 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "simple-sidebar.css";
 
 
 .brand-header {
@@ -7,56 +8,45 @@
   text-align: center;
 }
 
-.navbar {
-  margin-top: 0px;
-}
-
 .image-nav{
   border-radius: 50%;
-  height: 80px;
-  width: 80px;
+  height: 100px;
+  width: 100px;
 }
 
-.contents-nav {
+
+.home-blog {
   text-align: center;
-  float: left;
-  width: 25%;
+  margin: 0 auto;
+  width: 60%;
+}
+
+.home-blog-wrapper {
+  margin: 0 auto;
   margin-top: 40px;
+  width: 60%;
 }
 
 .post-container {
-  float: right;
   text-align: center;
   width: 60%;
   margin-top: 40px;
   padding-bottom: 20px;
 }
 
-.home-blog {
-  text-align: center;
-  float: right;
-  margin: 0 auto;
-  width: 60%;
-}
-
-.home-blog-wrapper {
-  float: right;
-  margin: 0 auto;
-  margin-top: 40px;
-  width: 60%;
-}
-
-
 .clearfix {
   overflow: auto;
 }
 
+.post-index-wrapper {
+  margin-top: 40px;
+
+}
 
 .about-container {
   background-image: url('moi.jpg');
   height: 625px;
   width: 720px;
-  float: right;
   margin-top: 40px;
 }
 
@@ -65,4 +55,8 @@
   margin-top: 85px;
   text-align: center;
   text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+}
+
+.float-container {
+  float: right;
 }

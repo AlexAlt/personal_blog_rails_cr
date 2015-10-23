@@ -1,7 +1,7 @@
-
-
-<% @posts.each do |post| %>
-  <h4><%= link_to post.title, post_path(post) %> 
-    <small>By: <%= post.user_name %> on <%= post.created_at.strftime("%m/%d/%Y at %I:%M%P")  %></small> 
-  </h4>
-<% end %>
+<div class="post-index-wrapper">
+  <% @posts.each do |post| %>
+    <h4><%= link_to post.title, post_path(post) %> 
+      <small>By: <%= post.user_name %> on <%= post.created_at.strftime("%m/%d/%Y at %I:%M%P")  %></small> 
+    </h4>
+  <% end %>
+</dv>

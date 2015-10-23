@@ -14,6 +14,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
+    authorize! :create, @post
     if @post.save
       flash[:notice] = "You did it!! Post posted!"
       redirect_to posts_path
