@@ -3,10 +3,9 @@ Rails.application.routes.draw do
   root 'home#index'
 
   resources 'users' do
+    resources 'posts' 
   end
   
-  resources 'posts' do 
-  end
 
   resources 'tags' do
   end

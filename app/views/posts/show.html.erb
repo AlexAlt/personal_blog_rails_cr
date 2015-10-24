@@ -1,6 +1,6 @@
 <div class="post-container panel panel-default">
   <h2><%= @post.title %></h2>
-  <h4><%= @post.user_name %> <small><%= @post.created_at.strftime("%m/%d/%Y %I:%M%P") %></small></h4>
+  <h4><%= @post.user %> <small><%= @post.created_at.strftime("%m/%d/%Y %I:%M%P") %></small></h4>
 
   <%= @post.content %>
   <hr>
@@ -14,7 +14,7 @@
   <% end%>
   <br>
 
-  <button class="btn"><%= link_to "Edit", edit_post_path %></button>
-   <button class="btn btn-link"><%= link_to "Delete Post", post_path(@post), :data => {:confirm => "You sure?",
+  <button class="btn"><%= link_to "Edit", edit_user_post_path %></button>
+   <button class="btn btn-link"><%= link_to "Delete Post", user_post_path(@post.user, @post), :data => {:confirm => "You sure?",
     :method => 'delete'} %></button>
 </div>

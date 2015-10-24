@@ -4,20 +4,20 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
+    @user = current_user
+    @post = @user.posts.find(params[:id])
   end
 
   def new
     @post = Post.new
-     2.times { @post.tags.build}
+     1.times { @post.tags.build}
   end
 
   def create
-    @post = Post.new(post_params)
-    authorize! :create, @post
+    @post = current_user.posts.new(post_params)
     if @post.save
       flash[:notice] = "You did it!! Post posted!"
-      redirect_to posts_path
+      redirect_to user_post_path(current_user, @post)
     else
       render :new
     end
@@ -30,7 +30,7 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     if @post.update(post_params)
-      redirect_to post_path(@post)
+      redirect_to user_post_path(current_user, @post)
       flash[:notice] = "Success!"
     else
       render :edit
@@ -40,12 +40,12 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-    redirect_to posts_path
+    redirect_to root_path
   end
 
   private
   def post_params
-     params.require(:post).permit(:user_name, :title, :image, :content, tags_attributes: [:id, :name])
+     params.require(:post).permit(:title, :image, :content, tags_attributes: [:id, :name])
   end
 
 end

@@ -2,10 +2,9 @@ class User < ActiveRecord::Base
   attr_accessor :password
   validates_confirmation_of :password
   validates_presence_of :username
-  has_many :questions
-  has_many :answers
-  has_many :votes
   before_save :encrypt_password
+  has_many :posts
+
 
   def encrypt_password
     self.password_salt = BCrypt::Engine.generate_salt

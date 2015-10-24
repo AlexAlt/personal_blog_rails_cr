@@ -1,10 +1,15 @@
 <h2>Log In</h2>
 
+
 <%= form_tag log_in_path do %>
-  <%= label_tag :username %> <br>
-  <%= text_field_tag :username, params[:username]%>
-  <br>
-  <%= label_tag :password %> <br>
-  <%= password_field_tag :password %>
-  <%= submit_tag "Log In" %>
+  <div class="form-group">
+    <%= label_tag :username %> <br>
+    <%= text_field_tag :username, params[:username]%>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag :password %> <br>
+    <%= password_field_tag :password %>
+  </div>
+  <span id="log-in"><%= submit_tag "Log In" %></span>
 <% end %>

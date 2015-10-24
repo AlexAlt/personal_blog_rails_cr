@@ -2,10 +2,7 @@
 
 
 <div class="form-group">
-  <%= form_for @post do |f| %>
-    <%= f.label :user_name %>
-    <%= f.text_field :user_name %>
-    <br>
+  <%= form_for [current_user, @post] do |f| %>
     <%= f.label :title %>
     <%= f.text_field :title %>
     <br>
