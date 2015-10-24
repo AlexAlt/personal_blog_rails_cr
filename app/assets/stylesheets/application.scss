@@ -46,7 +46,7 @@
   background-image: url('moi.jpg');
   height: 625px;
   width: 720px;
-  margin-top: 40px;
+  display: inline-block;
 }
 
 .about-text {
@@ -54,8 +54,4 @@
   margin-top: 85px;
   text-align: center;
   text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
-}
-
-.float-container {
-  float: right;
 }

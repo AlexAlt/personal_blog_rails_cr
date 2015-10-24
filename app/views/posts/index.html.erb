@@ -1,7 +1,12 @@
-<div class="post-index-wrapper">
-  <% @posts.each do |post| %>
-    <h4><%= link_to post.title, post_path(post) %> 
-      <small>By: <%= post.user %> on <%= post.created_at.strftime("%m/%d/%Y at %I:%M%P")  %></small> 
-    </h4>
-  <% end %>
-</dv>
+<% if @posts.any? %>
+
+  <div class="post-index-wrapper">
+    <% @posts.each do |post| %>
+      <h4><%= link_to post.title, post_path(post) %> 
+        <small>By: <%= post.user %> on <%= post.created_at.strftime("%m/%d/%Y at %I:%M%P")  %></small> 
+      </h4>
+    <% end %>
+  </div>
+<% else %>
+<h3> Nothing yet! </h3>
+<% end %>
