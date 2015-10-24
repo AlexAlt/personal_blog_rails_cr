@@ -9,6 +9,10 @@ class PostsController < ApplicationController
   end
 
   def new
+    if !current_user.admin
+      redirect_to root_path
+      flash[:alert] = "You don't have permission to do that"
+    end
     @post = Post.new
      1.times { @post.tags.build}
   end
