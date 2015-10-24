@@ -8,7 +8,7 @@ gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'bootstrap-sass', '~> 3.3.5'
-gem 'devise'
+gem 'bcrypt', '~> 3.1.5', require: "bcrypt"
 
 group :development do
   gem 'byebug'
