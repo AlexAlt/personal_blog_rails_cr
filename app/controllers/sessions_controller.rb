@@ -19,4 +19,4 @@ class SessionsController < ApplicationController
     flash[:notice] = "Log out successful"
     redirect_to "/"
   end
-en
+end

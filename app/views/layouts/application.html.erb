@@ -14,42 +14,52 @@
     <%= flash[:alert] %>
     <%= flash[:notice] %>
 
-   
-  <div id="sidebar-wrapper">
-    <ul class="sidebar-nav">
-        <li class="sidebar-brand">
-          <li>
-            <h4><a href="/">Alex Altieri</a></h4>
-          </li>
-          <li>
-            <%= image_tag 'ME.jpg', class: "image-nav"%>
-          </li>
-          </li>
-          <li>
-              <a href="/about">About</a>
-          </li>
-          <li>
-              <a href="#">Portfolio</a>
-          </li>
-          <li>
-              <a href="https://www.github.com/AlexAlt">GitHub</a>
-          </li>
-          <li>
-              <a href="https://www.linkedin.com/in/alexaltieri">LinkedIn</a>
-          </li>
-          <li>
-              <a href="/posts">Blog</a>
-          </li>
-    </ul>
-</div>
+  <div id="wrapper">
+    <div id="sidebar-wrapper">
+      <ul class="sidebar-nav">
+          <li class="sidebar-brand">
+            <li>
+              <h4><a href="/">Alex Altieri</a></h4>
+            </li>
+            <li>
+              <%= image_tag 'ME.jpg', class: "image-nav"%>
+            </li>
+            </li>
+            <li>
+                <a href="/about">About</a>
+            </li>
+            <li>
+                <a href="#">Portfolio</a>
+            </li>
+            <li>
+                <a href="https://www.github.com/AlexAlt">GitHub</a>
+            </li>
+            <li>
+                <a href="https://www.linkedin.com/in/alexaltieri">LinkedIn</a>
+            </li>
+            <li>
+                <a href="/posts">Blog</a>
+            </li>
+            <% if current_user %>
+              <li>
+                <a href="/log-out">Log Out</a>
+              </li>
+            <% else %>
+              <li>
+                <a href="/log-in">Log In</a>
+              </li>
+              <li>
+                <%= link_to "Sign Up", new_user_path %>
+              </li>
+            <% end %>
+      </ul>
+  </div>
 
-    <div class="page-content-wrapper container">
-      <div class="float-container">
-
-    <%= yield %>
-    
+    <div id="page-content-wrapper">
+      <div class="container-fluid">
+        <%= yield %> 
       </div>
     </div>
-
+  </div>
 </body>
 </html>
